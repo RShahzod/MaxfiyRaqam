@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/drawable/ic_baseline_cast_connected_24.xml" value="0.2115" />
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1935" />
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/drawable/ic_ucell.xml" value="0.33" />
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/drawable/shape.xml" value="0.2115" />
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/activity_beeline.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/activity_beeline_sayt.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/activity_mobiuz.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/activity_mobiuz_sayt.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/activity_splash_screen.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/activity_ucell.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/activity_ucell_sayt.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/activity_uzmobile.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/activity_uzmobile_sayt.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/custom_dialog.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1935" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

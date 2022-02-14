@@ -1,0 +1,2 @@
+# MaxfiyRaqam
+Net Nomer ochish

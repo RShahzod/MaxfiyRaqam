@@ -10,26 +10,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/mobiuz_color">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            >
+            android:background="@color/white">
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/uz_card_id"
                 android:layout_width="160dp"
                 android:layout_height="160dp"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
                 android:elevation="10dp"
                 app:cardBackgroundColor="#0FA6F6"
-                android:layout_centerHorizontal="true"
-                app:cardCornerRadius="100dp"
-                android:layout_margin="10dp">
+                app:cardCornerRadius="100dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/mobiuz"
-                    />
+                    android:src="@drawable/mobiuz" />
             </androidx.cardview.widget.CardView>
 
             <LinearLayout
@@ -45,7 +45,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
-                    android:text="MAXFIY RAQAMNI ANIQLASH"
+                    android:text="@string/maxfiy_raqamni_aniqlash"
                     android:textColor="@color/white"
                     android:textSize="25sp" />
 
@@ -57,9 +57,9 @@
                     app:cardUseCompatPadding="true">
 
                     <RelativeLayout
+                        android:id="@+id/sayt_orqali_mobiuz"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/sayt_orqali_mobiuz">
+                        android:layout_height="match_parent">
 
                         <TextView
                             android:layout_width="2dp"
@@ -84,7 +84,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="100dp"
-                            android:text="SAYT ORQALI ANIQLASH"
+                            android:text="@string/sayt_orqali_aniqlash"
                             android:textAllCaps="true"
                             android:textColor="@color/mobiuz_color"
                             android:textSize="20sp"
@@ -103,9 +103,9 @@
                     app:cardUseCompatPadding="true">
 
                     <RelativeLayout
+                        android:id="@+id/ilova_orqali_mobiuz"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/ilova_orqali_mobiuz">
+                        android:layout_height="match_parent">
 
                         <ImageView
                             android:layout_width="50dp"
@@ -130,7 +130,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="100dp"
-                            android:text="ILOVA ORQALI ANIQLASH"
+                            android:text="@string/ilova_orqali_aniqlash"
                             android:textAllCaps="true"
                             android:textColor="@color/mobiuz_color"
                             android:textSize="20sp"
@@ -152,7 +152,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="30dp"
                     android:gravity="center"
-                    android:text="MAXFIY RAQAM ANIQLASHNI O'RGANISH"
+                    android:text="@string/maxfiy_raqam_aniqlashni_o_rganish"
                     android:textColor="@color/white"
                     android:textSize="25sp"
                     android:textStyle="bold" />
@@ -165,9 +165,9 @@
                     app:cardUseCompatPadding="true">
 
                     <RelativeLayout
+                        android:id="@+id/video_orqali_mobiuz"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/video_orqali_mobiuz">
+                        android:layout_height="match_parent">
 
                         <ImageView
                             android:layout_width="50dp"
@@ -192,7 +192,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="100dp"
-                            android:text="VIDEO ORQALI O'RGANISH"
+                            android:text="@string/video_orqali_o_rganish"
                             android:textAllCaps="true"
                             android:textColor="@color/mobiuz_color"
                             android:textSize="20sp"

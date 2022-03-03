@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".BeelineActivity">
 
     <ScrollView
@@ -22,9 +21,9 @@
                 android:id="@+id/uz_card_id"
                 android:layout_width="160dp"
                 android:layout_height="160dp"
+                android:layout_centerHorizontal="true"
                 android:layout_margin="10dp"
                 android:elevation="10dp"
-                android:layout_centerHorizontal="true"
                 app:cardBackgroundColor="@color/beeline_color"
                 app:cardCornerRadius="100dp">
 
@@ -49,7 +48,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="10dp"
-                    android:text="MAXFIY RAQAMNI ANIQLASH"
+                    android:text="@string/maxfiy_raqamni_aniqlash"
                     android:textColor="@color/black"
                     android:textSize="25sp" />
 
@@ -88,7 +87,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="100dp"
-                            android:text="SAYT ORQALI ANIQLASH"
+                            android:text="@string/sayt_orqali_aniqlash"
                             android:textAllCaps="true"
                             android:textColor="@color/black"
                             android:textSize="20sp"
@@ -134,7 +133,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="100dp"
-                            android:text="ILOVA ORQALI ANIQLASH"
+                            android:text="@string/ilova_orqali_aniqlash"
                             android:textAllCaps="true"
                             android:textColor="@color/black"
                             android:textSize="20sp"
@@ -156,7 +155,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="30dp"
                     android:gravity="center"
-                    android:text="MAXFIY RAQAM ANIQLASHNI O'RGANISH"
+                    android:text="@string/maxfiy_raqam_aniqlashni_o_rganish"
                     android:textColor="@color/black"
                     android:textSize="25sp"
                     android:textStyle="bold" />
@@ -196,7 +195,7 @@
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="100dp"
-                            android:text="VIDEO ORQALI O'RGANISH"
+                            android:text="@string/video_orqali_o_rganish"
                             android:textAllCaps="true"
                             android:textColor="@color/black"
                             android:textSize="20sp"

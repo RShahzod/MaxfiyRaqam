@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Maxfiy Raqamni Aniqlash</string>
+    <string name="sayt_orqali_aniqlash">SAYT ORQALI ANIQLASH</string>
+    <string name="ilova_orqali_aniqlash">ILOVA ORQALI ANIQLASH</string>
+    <string name="maxfiy_raqam_aniqlashni_o_rganish">MAXFIY RAQAM ANIQLASHNI O\'RGANISH</string>
+    <string name="video_orqali_o_rganish">VIDEO ORQALI O\'RGANISH</string>
+    <string name="maxfiy_raqamni_aniqlash">MAXFIY RAQAMNI ANIQLASH</string>
+    <string name="net_nomer">NET NOMER</string>
+    <string name="maxfiy_raqamni_aniqlaymiz">MAXFIY RAQAMNI ANIQLAYMIZ</string>
+    <string name="ilovani_baholash">Ilovani baholash</string>
+    <string name="ilovani_ulashish">Ilovani ulashish</string>
+    <string name="ilova_haqida">Ilova haqida</string>
+    <string name="bizga_qo_shiling">Bizga qo\'shiling!</string>
+    <string name="youtube">YouTube</string>
+    <string name="telegram">Telegram</string>
+    <string name="instagram">Instagram</string>
+    <string name="tiktok">TikTok</string>
+    <string name="chiqish">Chiqish</string>
 </resources>

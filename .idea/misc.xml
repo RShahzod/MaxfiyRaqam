@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/drawable-v24/back_dialog.xml" value="0.1505" />
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/drawable-v24/background_button_yopish.xml" value="0.1505" />
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/drawable/background_button_video.xml" value="0.175" />
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/drawable/background_button_yopish.xml" value="0.1505" />
         <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/drawable/ic_baseline_cast_connected_24.xml" value="0.2115" />
         <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/drawable/ic_baseline_star_rate_24.xml" value="0.1475" />
         <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1935" />
@@ -10,7 +14,7 @@
         <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/drawable/ic_ucell.xml" value="0.33" />
         <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/drawable/ic_youtube_icon_almost_black_logo_wine.xml" value="0.1475" />
         <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/drawable/shape.xml" value="0.2115" />
-        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/activity_beeline.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/activity_beeline.xml" value="0.22" />
         <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/activity_beeline_sayt.xml" value="0.20416666666666666" />
         <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/activity_mobiuz.xml" value="0.20416666666666666" />
@@ -23,6 +27,7 @@
         <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/app_bar_activity.xml" value="0.20416666666666666" />
         <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/custom.xml" value="0.20416666666666666" />
         <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/custom_dialog.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/dialog_uchun.xml" value="0.25" />
         <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/nav_header_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/layout/tolbar.xml" value="0.20416666666666666" />
         <entry key="..\:/Android/AndroidProjec/NetNomer/app/src/main/res/menu/menu_option.xml" value="0.20416666666666666" />

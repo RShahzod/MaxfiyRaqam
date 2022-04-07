@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
+        android:src="@drawable/alert" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/dialog_uchun"
+        android:textColor="@color/black"
+        android:textSize="23sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/dialod_btn_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/background_button_video"
+        android:text="@string/video_orqali_o_rganish" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/dialod_btn_yopish"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_button_yopish"
+        android:text="@string/yopish"
+        android:textColor="@color/white" />
+
+
+</LinearLayout>

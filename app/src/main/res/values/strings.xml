@@ -16,4 +16,9 @@
     <string name="instagram">Instagram</string>
     <string name="tiktok">TikTok</string>
     <string name="chiqish">Chiqish</string>
+    <string name="dialog_uchun">Maxfiy Raqamni Aniqlash ilovasi shunchaki maxfiy raqamni aniqlash
+        uchun yordamchi, agarda ilovadan foydalanishni bilmasangiz oldin
+        ilovadan foydalanishni o\'rganing!</string>
+    <string name="yopish">Yopish</string>
+    <string name="baholash">Baholash</string>
 </resources>

@@ -1,5 +1,6 @@
 package uz.shox.netnomer;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,9 +9,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
 public class BeelineActivity extends AppCompatActivity {
 
     private RelativeLayout saytOrqali,ilovaOrqali,videoOrqali;
+    private AdView adView1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +28,16 @@ public class BeelineActivity extends AppCompatActivity {
         saytOrqali=findViewById(R.id.sayt_orqali_beeline);
         ilovaOrqali=findViewById(R.id.ilova_orqali_beeline);
         videoOrqali=findViewById(R.id.video_orqali_beeline);
+
+        MobileAds.initialize(BeelineActivity.this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
+
+            }
+        });
+        adView1 = findViewById(R.id.adView1);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        adView1.loadAd(adRequest);
 
         saytOrqali.setOnClickListener(new View.OnClickListener() {
             @Override

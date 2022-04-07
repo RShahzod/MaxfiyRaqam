@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NetNomer"
         >
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-7532241080505290~5192107570"/>
         <activity
             android:name=".MobiuzSaytActivity"
             android:exported="false" />
@@ -58,6 +61,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"/>
+
     </application>
 
 </manifest>

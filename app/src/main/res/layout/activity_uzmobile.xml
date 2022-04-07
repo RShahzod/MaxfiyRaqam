@@ -29,7 +29,7 @@
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/uzmobile" />
+                    android:src="@drawable/uzmobile_logo" />
             </androidx.cardview.widget.CardView>
 
             <LinearLayout
@@ -41,9 +41,9 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:gravity="center"
                     android:layout_margin="10dp"
                     android:text="@string/maxfiy_raqamni_aniqlash"
                     android:textColor="@color/white"
@@ -64,7 +64,7 @@
                         <TextView
                             android:layout_width="2dp"
                             android:layout_height="match_parent"
-                            android:layout_marginLeft="70dp"
+                            android:layout_marginStart="70dp"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
                             android:background="@color/uzmobile_color" />
@@ -83,7 +83,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginLeft="100dp"
+                            android:layout_marginStart="100dp"
                             android:text="@string/sayt_orqali_aniqlash"
                             android:textAllCaps="true"
                             android:textColor="@color/uzmobile_color"
@@ -120,7 +120,7 @@
                         <TextView
                             android:layout_width="2dp"
                             android:layout_height="match_parent"
-                            android:layout_marginLeft="70dp"
+                            android:layout_marginStart="70dp"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
                             android:background="#0FA6F6" />
@@ -129,7 +129,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginLeft="100dp"
+                            android:layout_marginStart="100dp"
                             android:text="@string/ilova_orqali_aniqlash"
                             android:textAllCaps="true"
                             android:textColor="@color/uzmobile_color"
@@ -182,7 +182,7 @@
                         <TextView
                             android:layout_width="2dp"
                             android:layout_height="match_parent"
-                            android:layout_marginLeft="70dp"
+                            android:layout_marginStart="70dp"
                             android:layout_marginTop="5dp"
                             android:layout_marginBottom="5dp"
                             android:background="#0FA6F6" />
@@ -191,7 +191,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginLeft="100dp"
+                            android:layout_marginStart="100dp"
                             android:text="@string/video_orqali_o_rganish"
                             android:textAllCaps="true"
                             android:textColor="@color/uzmobile_color"
@@ -202,6 +202,16 @@
                     </RelativeLayout>
 
                 </androidx.cardview.widget.CardView>
+
+                <com.google.android.gms.ads.AdView
+                    android:id="@+id/adView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    xmlns:ads="http://schemas.android.com/apk/res-auto"
+                    ads:adSize="BANNER"
+                    ads:adUnitId="ca-app-pub-7532241080505290/7208768968"/>
+
             </LinearLayout>
 
         </RelativeLayout>

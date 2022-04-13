@@ -5,7 +5,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,7 +12,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -26,6 +27,9 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.navigation.NavigationView;
+
+import uz.shox.netnomer.activity.AllActivity;
+
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -48,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ucell = findViewById(R.id.ucell_id);
         mobiuz = findViewById(R.id.mobiuz_id);
         drawerLayout = findViewById(R.id.drawer_Lay);
-        nav_open = findViewById(R.id.toolbar_nav_open);
+//        nav_open = findViewById(R.id.toolbar_nav_open);
         toolbar_view = findViewById(R.id.tollbar_for);
 
 
@@ -65,12 +69,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toolbar_view.setTitle("");
         setSupportActionBar(toolbar_view);
 
-        nav_open.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                drawerLayout.openDrawer(Gravity.LEFT);
-            }
-        });
+//        nav_open.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                drawerLayout.openDrawer(Gravity.LEFT);
+//            }
+//        });
+        ActionBarDrawerToggle toogle = new ActionBarDrawerToggle(this, drawerLayout, toolbar_view,
+                R.string.navigation_open, R.string.navigation_close);
+        drawerLayout.addDrawerListener(toogle);
+        toogle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -80,25 +88,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         uzmobile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, UzmobileActivity.class));
+                startActivity(new Intent(MainActivity.this, AllActivity.class)
+                        .putExtra("key", "uzmobile"));
             }
         });
         beeline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, BeelineActivity.class));
+                startActivity(new Intent(MainActivity.this, AllActivity.class)
+                        .putExtra("key", "beeline"));
             }
         });
         ucell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, UcellActivity.class));
+                startActivity(new Intent(MainActivity.this, AllActivity.class)
+                        .putExtra("key", "ucell"));
             }
         });
         mobiuz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, MobiuzActivity.class));
+                startActivity(new Intent(MainActivity.this, AllActivity.class)
+                        .putExtra("key", "mobiuz"));
             }
         });
         dialog_for();
@@ -181,24 +193,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.exit_app: {
-            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-            builder.setTitle("Ilovadan chiqish!");
-            builder.setMessage("Siz haqiqatdan ham ilovadan chiqmoqchimisiz?");
-            builder.setCancelable(false);
-            builder.setPositiveButton("Chiqish", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    finish();
-                }
-            });
-            builder.setNegativeButton("Bekor qilish", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    dialogInterface.dismiss();
-                }
-            });
-            builder.create();
-            builder.show();
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("Ilovadan chiqish!");
+                builder.setMessage("Siz haqiqatdan ham ilovadan chiqmoqchimisiz?");
+                builder.setCancelable(false);
+                builder.setPositiveButton("Chiqish", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finish();
+                    }
+                });
+                builder.setNegativeButton("Bekor qilish", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                });
+                builder.create();
+                builder.show();
             }
             case R.id.rate_app: {
                 try {

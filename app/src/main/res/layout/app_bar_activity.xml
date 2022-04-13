@@ -7,126 +7,101 @@
     android:gravity="center"
     tools:context=".MainActivity">
 
-    <include
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/tollbar_for"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/tolbar"/>
+        android:layout_height="wrap_content" />
 
     <androidx.cardview.widget.CardView
-        android:layout_below="@+id/tollbar_for"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardElevation="8dp"
+        android:layout_below="@+id/tollbar_for"
         app:cardCornerRadius="5dp"
+        app:cardElevation="8dp"
         app:cardUseCompatPadding="true">
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
+            android:layout_height="match_parent">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
                 <TextView
+                    android:id="@+id/maxfiy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/maxfiy_raqamni_aniqlash"
-                    android:textSize="35sp"
-                    android:textColor="#ff00"
-                    android:id="@+id/maxfiy"
-                    android:textStyle="bold"
+                    android:layout_marginBottom="80dp"
                     android:gravity="center"
                     android:padding="20dp"
-                    android:layout_marginBottom="80dp"/>
+                    android:text="@string/maxfiy_raqamni_aniqlash"
+                    android:textColor="#ff00"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal">
-                    <androidx.cardview.widget.CardView
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/uzmobile_id"
                         android:layout_width="160dp"
                         android:layout_height="160dp"
-                        android:elevation="10dp"
-                        app:cardBackgroundColor="#0FA6F6"
-                        android:layout_centerInParent="true"
-                        app:cardCornerRadius="100dp"
-                        android:layout_margin="10dp">
-
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:id="@+id/uzmobile_id"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/uzmobile_logo"
-                            />
-
-                    </androidx.cardview.widget.CardView>
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:elevation="10dp"
-                        app:cardBackgroundColor="@color/black"
-                        android:layout_alignParentEnd="true"
                         android:layout_margin="10dp"
-                        app:cardCornerRadius="100dp">
+                        android:scaleType="centerCrop"
+                        android:elevation="5dp"
+                        android:src="@drawable/uzmobile_logo"
+                        app:shapeAppearanceOverlay="@style/circleImageView" />
 
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/ucel"
-                            android:id="@+id/ucell_id"
-                            />
-                    </androidx.cardview.widget.CardView>
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ucell_id"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_margin="10dp"
+                        android:scaleType="centerCrop"
+                        android:elevation="5dp"
+                        android:src="@drawable/ucel"
+                        app:shapeAppearanceOverlay="@style/circleImageView" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal">
-                    <androidx.cardview.widget.CardView
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/beeline_id"
                         android:layout_width="160dp"
                         android:layout_height="160dp"
-                        android:elevation="10dp"
-                        app:cardBackgroundColor="#FFD001"
-                        android:layout_centerInParent="true"
-                        app:cardCornerRadius="100dp"
-                        android:layout_margin="10dp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/beeline"
-                            android:layout_marginStart="5dp"
-                            android:id="@+id/beeline_id"
-                            android:padding="15dp"/>
-
-                    </androidx.cardview.widget.CardView>
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="160dp"
-                        android:layout_height="160dp"
-                        android:elevation="10dp"
-                        app:cardBackgroundColor="@color/black"
-                        android:layout_alignParentEnd="true"
                         android:layout_margin="10dp"
-                        app:cardCornerRadius="100dp">
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/mobiuz"
-                            android:id="@+id/mobiuz_id"/>
-                    </androidx.cardview.widget.CardView>
+                        android:scaleType="centerCrop"
+                        android:elevation="5dp"
+                        android:src="@drawable/beeline"
+                        app:shapeAppearanceOverlay="@style/circleImageView" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/mobiuz_id"
+                        android:layout_width="160dp"
+                        android:layout_height="160dp"
+                        android:layout_margin="10dp"
+                        android:scaleType="centerCrop"
+                        android:elevation="5dp"
+                        android:src="@drawable/mobiuz"
+                        app:shapeAppearanceOverlay="@style/circleImageView" />
                 </LinearLayout>
 
-                <com.google.android.gms.ads.AdView
+                <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/adView1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
-                    xmlns:ads="http://schemas.android.com/apk/res-auto"
                     ads:adSize="BANNER"
-                    ads:adUnitId="ca-app-pub-7532241080505290/8984885060"/>
+                    ads:adUnitId="ca-app-pub-7532241080505290/8984885060" />
 
             </LinearLayout>
         </ScrollView>

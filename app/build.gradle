@@ -9,8 +9,8 @@ android {
         applicationId "uz.shox.netnomer"
         minSdk 24
         targetSdk 33
-        versionCode 3
-        versionName "1.2"
+        versionCode 10
+        versionName "1.4.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.debug
@@ -36,4 +36,5 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'com.google.android.gms:play-services-ads:20.6.0'
 }

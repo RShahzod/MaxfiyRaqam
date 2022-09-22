@@ -10,6 +10,10 @@
                 android:title="@string/chiqish"
                 android:icon="@drawable/ic_baseline_exit_to_app_24"
                 app:showAsAction="ifRoom"/>
+            <item android:id="@+id/rate_app"
+                android:title="@string/baholash"
+                android:icon="@drawable/ic_baseline_star_rate_24"
+                app:showAsAction="ifRoom"/>
         </menu>
     </item>
 

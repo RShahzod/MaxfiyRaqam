@@ -12,7 +12,8 @@
         android:layout_above="@+id/appName"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
-        android:src="@drawable/logos" />
+        android:src="@drawable/logos"
+        android:contentDescription="@string/logo" />
 
     <TextView
         android:id="@+id/appName"

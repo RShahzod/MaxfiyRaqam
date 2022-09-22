@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="uz.shox.netnomer"
-    >
+    package="uz.shox.netnomer">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <application
-
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@drawable/logos"
         android:supportsRtl="true"
-        android:theme="@style/Theme.NetNomer"
-        >
+        android:theme="@style/Theme.NetNomer">
+
+        <activity
+            android:name=".activity.AllActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-7532241080505290~5192107570" />
+
         <activity
             android:name=".MobiuzSaytActivity"
             android:exported="false" />
         <activity
             android:name=".BeelineSaytActivity"
-            android:exported="false"
-            />
+            android:exported="false" />
         <activity
             android:name=".UcellSaytActivity"
             android:exported="false" />
@@ -29,25 +33,8 @@
             android:name=".UzmobileSaytActivity"
             android:exported="false" />
         <activity
-            android:name=".MobiuzActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".UcellActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".BeelineActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name=".UzmobileActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"/>
-        <activity
             android:name=".SplashScreen"
-            android:exported="true"
-            android:screenOrientation="portrait">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -57,7 +44,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:screenOrientation="portrait"/>
+            />
     </application>
 
 </manifest>

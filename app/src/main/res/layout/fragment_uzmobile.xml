@@ -17,7 +17,7 @@
             android:background="@color/background">
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/uz_card_id"
+                android:id="@+id/uzmobile_id"
                 android:layout_width="160dp"
                 android:layout_height="160dp"
                 android:layout_centerHorizontal="true"
@@ -29,7 +29,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/uzmobile"/>
+                    android:src="@drawable/uzmobile_logo"/>
             </com.google.android.material.card.MaterialCardView>
 
             <LinearLayout

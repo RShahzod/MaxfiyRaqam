@@ -14,9 +14,9 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white">
+            android:background="@color/background">
 
-            <androidx.cardview.widget.CardView
+            <com.google.android.material.card.MaterialCardView
                 android:id="@+id/uz_card_id"
                 android:layout_width="160dp"
                 android:layout_height="160dp"
@@ -24,13 +24,13 @@
                 android:layout_margin="10dp"
                 android:elevation="10dp"
                 app:cardBackgroundColor="#0FA6F6"
-                app:cardCornerRadius="100dp">
+                app:shapeAppearanceOverlay="@style/CircleShape">
 
-                <de.hdodenhof.circleimageview.CircleImageView
+                <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/mobiuz" />
-            </androidx.cardview.widget.CardView>
+            </com.google.android.material.card.MaterialCardView>
 
             <LinearLayout
                 android:layout_width="match_parent"

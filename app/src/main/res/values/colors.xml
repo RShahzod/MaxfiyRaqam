@@ -11,4 +11,5 @@
     <color name="ucell_color">#623592</color>
     <color name="beeline_color">#FDD537</color>
     <color name="mobiuz_color">#F4473A</color>
+    <color name="background">#FFFFFF</color>
 </resources>

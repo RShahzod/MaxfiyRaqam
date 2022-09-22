@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         layout="@layout/tolbar"/>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_below="@+id/tollbar_for"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,54 +44,51 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal">
-                    <androidx.cardview.widget.CardView
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="160dp"
                         android:layout_height="160dp"
                         android:elevation="10dp"
                         app:cardBackgroundColor="#0FA6F6"
-                        android:layout_centerInParent="true"
-                        app:cardCornerRadius="100dp"
-                        android:layout_margin="10dp">
+                        android:layout_margin="10dp"
+                        app:shapeAppearanceOverlay="@style/CircleShape">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:id="@+id/uzmobile_id"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/uzmobile_logo"
-                            />
+                            android:src="@drawable/uzmobile_logo"/>
 
-                    </androidx.cardview.widget.CardView>
-                    <androidx.cardview.widget.CardView
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="160dp"
                         android:layout_height="160dp"
                         android:elevation="10dp"
                         app:cardBackgroundColor="@color/black"
                         android:layout_alignParentEnd="true"
                         android:layout_margin="10dp"
-                        app:cardCornerRadius="100dp">
+                        app:shapeAppearanceOverlay="@style/CircleShape">
 
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/ucel"
-                            android:id="@+id/ucell_id"
-                            />
-                    </androidx.cardview.widget.CardView>
+                            android:id="@+id/ucell_id"/>
+                    </com.google.android.material.card.MaterialCardView>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal">
-                    <androidx.cardview.widget.CardView
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="160dp"
                         android:layout_height="160dp"
                         android:elevation="10dp"
                         app:cardBackgroundColor="#FFD001"
                         android:layout_centerInParent="true"
-                        app:cardCornerRadius="100dp"
-                        android:layout_margin="10dp">
+                        android:layout_margin="10dp"
+                        app:shapeAppearanceOverlay="@style/CircleShape">
 
                         <ImageView
                             android:layout_width="match_parent"
@@ -101,26 +98,26 @@
                             android:id="@+id/beeline_id"
                             android:padding="15dp"/>
 
-                    </androidx.cardview.widget.CardView>
-                    <androidx.cardview.widget.CardView
+                    </com.google.android.material.card.MaterialCardView>
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="160dp"
                         android:layout_height="160dp"
                         android:elevation="10dp"
                         app:cardBackgroundColor="@color/black"
                         android:layout_alignParentEnd="true"
                         android:layout_margin="10dp"
-                        app:cardCornerRadius="100dp">
-                        <de.hdodenhof.circleimageview.CircleImageView
+                        app:shapeAppearanceOverlay="@style/CircleShape">
+                        <ImageView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/mobiuz"
                             android:id="@+id/mobiuz_id"/>
-                    </androidx.cardview.widget.CardView>
+                    </com.google.android.material.card.MaterialCardView>
                 </LinearLayout>
 
             </LinearLayout>
         </ScrollView>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 </RelativeLayout>

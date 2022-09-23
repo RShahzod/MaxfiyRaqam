@@ -14,9 +14,12 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.LoadAdError;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import uz.shox.netnomer.R;
 import uz.shox.netnomer.UcellSaytActivity;
@@ -25,10 +28,33 @@ public class UcellFragment extends Fragment {
 
     private RelativeLayout saytOrqali, ilovaOrqali, videoOrqali;
     private AdView adView1;
+    private InterstitialAd mInterstitialAd;
+    private boolean showAd = false;
+    private boolean adShown = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        MobileAds.initialize(requireContext(), initializationStatus -> {
+
+        });
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        InterstitialAd.load(requireContext(), "ca-app-pub-7532241080505290/8523500731", adRequest,
+                new InterstitialAdLoadCallback() {
+                    @Override
+                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                        mInterstitialAd = interstitialAd;
+                    }
+
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        mInterstitialAd = null;
+                    }
+                });
     }
 
     @Override
@@ -43,13 +69,6 @@ public class UcellFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-
-        MobileAds.initialize(requireContext(), new OnInitializationCompleteListener() {
-            @Override
-            public void onInitializationComplete(@NonNull InitializationStatus initializationStatus) {
-
-            }
-        });
         AdRequest adRequest = new AdRequest.Builder().build();
         adView1.loadAd(adRequest);
 
@@ -82,5 +101,18 @@ public class UcellFragment extends Fragment {
         ilovaOrqali = view.findViewById(R.id.ilova_orqali_ucell);
         videoOrqali = view.findViewById(R.id.video_orqali_ucell);
         adView1 = view.findViewById(R.id.adView1);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (!showAd) {
+            showAd = true;
+        } else if (!adShown) {
+            if (mInterstitialAd != null) {
+                mInterstitialAd.show(requireActivity());
+                adShown = true;
+            }
+        }
     }
 }

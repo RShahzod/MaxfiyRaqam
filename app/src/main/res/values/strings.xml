@@ -26,4 +26,9 @@
     <string name="navigation_open">Open navigation drawer</string>
     <string name="navigation_close">Close navigation drawer</string>
     <string name="logo">Logo</string>
+    <string name="rate_dialog_title">Dasturni baholash</string>
+    <string name="rate_dialog_message">Dastur sizga yoqqan bo\'lsa iltimos dasturni baholang</string>
+    <string name="rate_dialog_ok">Baholash</string>
+    <string name="rate_dialog_cancel">Keyinroq eslatish</string>
+    <string name="rate_dialog_no">Yo\'q</string>
 </resources>

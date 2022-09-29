@@ -89,7 +89,7 @@
                             android:layout_marginStart="100dp"
                             android:text="@string/sayt_orqali_aniqlash"
                             android:textAllCaps="true"
-                            android:textColor="@color/black"
+                            android:textColor="@color/beeline_color"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -135,7 +135,7 @@
                             android:layout_marginStart="100dp"
                             android:text="@string/ilova_orqali_aniqlash"
                             android:textAllCaps="true"
-                            android:textColor="@color/black"
+                            android:textColor="@color/beeline_color"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -197,7 +197,7 @@
                             android:layout_marginStart="100dp"
                             android:text="@string/video_orqali_o_rganish"
                             android:textAllCaps="true"
-                            android:textColor="@color/black"
+                            android:textColor="@color/beeline_color"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="background">#272727</color>
+    <color name="text">#FFFFFF</color>
+    <color name="ucell_color">#B884EF</color>
 </resources>

@@ -12,4 +12,5 @@
     <color name="beeline_color">#FDD537</color>
     <color name="mobiuz_color">#F4473A</color>
     <color name="background">#FFFFFF</color>
+    <color name="text">#000000</color>
 </resources>

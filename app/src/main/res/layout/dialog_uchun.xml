@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="@string/dialog_uchun"
-        android:textColor="@color/black"
+        android:textColor="@color/text"
         android:textSize="23sp" />
 
     <androidx.appcompat.widget.AppCompatButton

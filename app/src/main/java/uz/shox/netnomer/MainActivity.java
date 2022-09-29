@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -28,6 +29,8 @@ import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.navigation.NavigationView;
 
+import hotchemi.android.rate.AppRate;
+import hotchemi.android.rate.OnClickButtonListener;
 import uz.shox.netnomer.activity.AllActivity;
 
 
@@ -115,7 +118,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
         dialog_for();
 
+        AppRate.with(this)
+                .setInstallDays(3)
+                .setLaunchTimes(3)
+                .setRemindInterval(1)
+                .setShowLaterButton(true)
+                .setDebug(false)
+                .monitor();
 
+        AppRate.showRateDialogIfMeetsConditions(this);
     }
 
     @Override

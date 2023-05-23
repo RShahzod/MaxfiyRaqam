@@ -89,7 +89,7 @@ public class MobiuzFragment extends Fragment {
         videoOrqali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "https://www.youtube.com/c/NETNOMER";
+                String url = "https://youtu.be/lvMyhg3WFFw";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);

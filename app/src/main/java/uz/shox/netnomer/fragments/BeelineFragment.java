@@ -91,7 +91,7 @@ public class BeelineFragment extends Fragment {
         videoOrqali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "https://www.youtube.com/c/NETNOMER";
+                String url = "https://youtu.be/MMDXSPdXH8k";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);

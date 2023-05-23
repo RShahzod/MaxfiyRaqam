@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 break;
             case R.id.menu_youtube:
-                String url_youtube = "https://www.youtube.com/c/NETNOMER";
+                String url_youtube = "https://www.youtube.com/c/NET_NOMER";
                 Intent i_youtube = new Intent(Intent.ACTION_VIEW);
                 i_youtube.setData(Uri.parse(url_youtube));
                 startActivity(i_youtube);
@@ -257,7 +257,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         btn_Video.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url_dialog = "https://youtu.be/U8cxgQax7tM";
+                String url_dialog = "https://youtu.be/wrHMLtnmIgg";
                 Intent i_dialog = new Intent(Intent.ACTION_VIEW);
                 i_dialog.setData(Uri.parse(url_dialog));
                 startActivity(i_dialog);

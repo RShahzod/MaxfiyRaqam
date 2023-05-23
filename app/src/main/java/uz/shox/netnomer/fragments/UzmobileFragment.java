@@ -89,7 +89,7 @@ public class UzmobileFragment extends Fragment {
             }
         });
         videoOrqali.setOnClickListener(view -> {
-            String url = "https://www.youtube.com/c/NETNOMER";
+            String url = "https://youtu.be/WQqLlARoOvM";
             Intent i = new Intent(Intent.ACTION_VIEW);
             i.setData(Uri.parse(url));
             startActivity(i);

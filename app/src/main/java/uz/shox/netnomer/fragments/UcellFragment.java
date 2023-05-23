@@ -88,7 +88,7 @@ public class UcellFragment extends Fragment {
         videoOrqali.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "https://www.youtube.com/c/NETNOMER";
+                String url = "https://youtu.be/WDShD1MgbI0";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
                 startActivity(i);

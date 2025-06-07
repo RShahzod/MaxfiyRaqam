@@ -11,8 +11,8 @@ android {
         applicationId "uz.shox.netnomer"
         minSdk 24
         targetSdk 36
-        versionCode 13
-        versionName "1.5.2"
+        versionCode 16
+        versionName "1.5.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.debug

@@ -1,34 +1,34 @@
 <resources>
-    <string name="app_name">Maxfiy Raqamni Aniqlash</string>
-    <string name="sayt_orqali_aniqlash">SAYT ORQALI ANIQLASH</string>
-    <string name="ilova_orqali_aniqlash">ILOVA ORQALI ANIQLASH</string>
-    <string name="maxfiy_raqam_aniqlashni_o_rganish">MAXFIY RAQAM ANIQLASHNI O\'RGANISH</string>
-    <string name="video_orqali_o_rganish">VIDEO ORQALI O\'RGANISH</string>
-    <string name="maxfiy_raqamni_aniqlash">MAXFIY RAQAMNI ANIQLASH</string>
-    <string name="net_nomer">NET NOMER</string>
-    <string name="maxfiy_raqamni_aniqlaymiz">MAXFIY RAQAMNI ANIQLAYMIZ</string>
-    <string name="ilovani_baholash">Ilovani baholash</string>
-    <string name="ilovani_ulashish">Ilovani ulashish</string>
-    <string name="ilova_haqida">Ilova haqida</string>
-    <string name="bizga_qo_shiling">Bizga qo\'shiling!</string>
+    <string name="app_name">Определение Скрытого Номера</string>
+    <string name="sayt_orqali_aniqlash">ОПРЕДЕЛИТЬ ЧЕРЕЗ САЙТ</string>
+    <string name="ilova_orqali_aniqlash">ОПРЕДЕЛИТЬ ЧЕРЕЗ ПРИЛОЖЕНИЕ</string>
+    <string name="maxfiy_raqam_aniqlashni_o_rganish">НАУЧИТЬСЯ ОПРЕДЕЛЯТЬ СКРЫТЫЕ НОМЕРА</string>
+    <string name="video_orqali_o_rganish">ОБУЧЕНИЕ ПО ВИДЕО</string>
+    <string name="maxfiy_raqamni_aniqlash">ОПРЕДЕЛЕНИЕ СКРЫТЫХ НОМЕРОВ</string> <!-- Or "ОПРЕДЕЛИТЬ СКРЫТЫЙ НОМЕР" if it's a direct action button -->
+    <string name="net_nomer">НЕИЗВЕСТНЫЙ НОМЕР</string> <!-- Or "НОМЕР НЕ ОПРЕДЕЛЕН" -->
+    <string name="maxfiy_raqamni_aniqlaymiz">ОПРЕДЕЛЯЕМ СКРЫТЫЕ НОМЕРА</string>
+    <string name="ilovani_baholash">Оценить приложение</string>
+    <string name="ilovani_ulashish">Поделиться приложением</string>
+    <string name="ilova_haqida">О приложении</string>
+    <string name="bizga_qo_shiling">Присоединяйтесь к нам!</string>
     <string name="youtube">YouTube</string>
     <string name="telegram">Telegram</string>
     <string name="instagram">Instagram</string>
     <string name="tiktok">TikTok</string>
-    <string name="chiqish">Chiqish</string>
-    <string name="dialog_uchun">Maxfiy Raqamni Aniqlash ilovasi shunchaki maxfiy raqamni aniqlash
-        uchun yordamchi, agarda ilovadan foydalanishni bilmasangiz oldin
-        ilovadan foydalanishni o\'rganing!</string>
-    <string name="yopish">Yopish</string>
-    <string name="baholash">Baholash</string>
+    <string name="chiqish">Выход</string>
+    <string name="dialog_uchun">Приложение "Определение Скрытого Номера" — это просто помощник
+        для определения скрытых номеров. Если вы не знаете, как пользоваться приложением, пожалуйста,
+        сначала научитесь им пользоваться!</string>
+    <string name="yopish">Закрыть</string>
+    <string name="baholash">Оценить</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="navigation_open">Open navigation drawer</string>
-    <string name="navigation_close">Close navigation drawer</string>
-    <string name="logo">Logo</string>
-    <string name="rate_dialog_title">Dasturni baholash</string>
-    <string name="rate_dialog_message">Dastur sizga yoqqan bo\'lsa iltimos dasturni baholang</string>
-    <string name="rate_dialog_ok">Baholash</string>
-    <string name="rate_dialog_cancel">Keyinroq eslatish</string>
-    <string name="rate_dialog_no">Yo\'q</string>
+    <string name="hello_blank_fragment">Привет, пустой фрагмент</string>
+    <string name="navigation_open">Открыть панель навигации</string>
+    <string name="navigation_close">Закрыть панель навигации</string>
+    <string name="logo">Логотип</string>
+    <string name="rate_dialog_title">Оцените приложение</string>
+    <string name="rate_dialog_message">Если вам понравилось приложение, пожалуйста, оцените его.</string>
+    <string name="rate_dialog_ok">Оценить</string>
+    <string name="rate_dialog_cancel">Напомнить позже</string>
+    <string name="rate_dialog_no">Нет</string>
 </resources>

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -14,7 +15,7 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
 
         int secondsDelayed = 1;
-        new Handler().postDelayed(new Runnable() {
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             public void run() {
                 startActivity(new Intent(SplashScreen.this, MainActivity.class));
                 finish();

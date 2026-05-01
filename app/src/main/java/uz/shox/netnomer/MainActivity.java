@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
@@ -129,6 +130,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .monitor();
 
         AppRate.showRateDialogIfMeetsConditions(this);
+
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                } else {
+                    finish();
+                }
+            }
+        });
     }
 
     @Override
@@ -224,6 +236,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 });
                 builder.create();
                 builder.show();
+                break;
             }
             case R.id.rate_app: {
                 try {
@@ -233,19 +246,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     startActivity(new Intent(Intent.ACTION_VIEW,
                             Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName())));
                 }
+                break;
             }
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-
     }
 
     public void dialog_for() {

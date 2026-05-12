@@ -11,26 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NetNomer">
 
-        <activity
-            android:name=".activity.AllActivity"
-            android:exported="false" />
-
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-7532241080505290~5192107570" />
 
-        <activity
-            android:name=".MobiuzSaytActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BeelineSaytActivity"
-            android:exported="false" />
-        <activity
-            android:name=".UcellSaytActivity"
-            android:exported="false" />
-        <activity
-            android:name=".UzmobileSaytActivity"
-            android:exported="false" />
         <activity
             android:name=".SplashScreen"
             android:exported="true">
@@ -42,8 +26,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            />
+            android:exported="false" />
     </application>
 
 </manifest>

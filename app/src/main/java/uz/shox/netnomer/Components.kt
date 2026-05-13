@@ -67,7 +67,7 @@ fun HomeDrawer(
                     .padding(start = 16.dp, top = 16.dp, end = 16.dp, bottom = 16.dp),
             ) {
                 Image(
-                    painter = painterResource(R.drawable.logos),
+                    painter = painterResource(R.drawable.splash_logo),
                     contentDescription = stringResource(R.string.logo),
                     modifier = Modifier.size(96.dp),
                 )

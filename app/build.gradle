@@ -13,8 +13,8 @@ android {
         applicationId "uz.shox.maxfiy_raqam"
         minSdk 24
         targetSdk 36
-        versionCode 16
-        versionName "1.5.4"
+        versionCode 1
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -24,8 +24,8 @@ android {
             signingConfig signingConfigs.debug
         }
         release {
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

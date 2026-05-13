@@ -18,6 +18,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -28,6 +29,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.tooling.preview.Preview
 import kotlinx.coroutines.delay
 
 class SplashScreen : ComponentActivity() {
@@ -38,53 +40,68 @@ class SplashScreen : ComponentActivity() {
             navigationBarStyle = SystemBarStyle.dark(AndroidColor.TRANSPARENT),
         )
         setContent {
-            NetNomerTheme {
-                LaunchedEffect(Unit) {
-                    delay(3_000)
+            SplashScreenContent(
+                onTimeout = {
                     if (!isFinishing && !isDestroyed) {
                         startActivity(Intent(this@SplashScreen, MainActivity::class.java))
                         finish()
                     }
                 }
-                Box(
+            )
+        }
+    }
+}
+
+@Composable
+fun SplashScreenContent(onTimeout: () -> Unit = {}) {
+    NetNomerTheme {
+        LaunchedEffect(Unit) {
+            delay(3_000)
+            onTimeout()
+        }
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(Color(0xFF04131A)),
+            contentAlignment = Alignment.Center,
+        ) {
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
+                Image(
+                    painter = painterResource(R.drawable.splash_logo),
+                    contentDescription = stringResource(R.string.logo),
+                    modifier = Modifier.size(150.dp),
+                )
+                Spacer(Modifier.height(40.dp))
+                Text(
+                    text = stringResource(R.string.net_nomer),
+                    color = Color.Red,
+                    fontSize = 45.sp,
+                    lineHeight = 54.sp,
+                    fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center,
                     modifier = Modifier
-                        .fillMaxSize()
-                        .background(Color(0xFF04131A)),
-                    contentAlignment = Alignment.Center,
-                ) {
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                    ) {
-                        Image(
-                            painter = painterResource(R.drawable.logos),
-                            contentDescription = stringResource(R.string.logo),
-                            modifier = Modifier.size(150.dp),
-                        )
-                        Spacer(Modifier.height(40.dp))
-                        Text(
-                            text = stringResource(R.string.net_nomer),
-                            color = Color.Red,
-                            fontSize = 45.sp,
-                            lineHeight = 54.sp,
-                            fontWeight = FontWeight.Bold,
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .padding(horizontal = 24.dp, vertical = 10.dp),
-                        )
-                        Spacer(Modifier.height(8.dp))
-                        Text(
-                            text = stringResource(R.string.maxfiy_raqamni_aniqlaymiz),
-                            color = Color.White,
-                            fontSize = 13.sp,
-                            textAlign = TextAlign.Center,
-                            modifier = Modifier
-                                .background(Color.Red)
-                                .padding(horizontal = 12.dp, vertical = 2.dp),
-                        )
-                    }
-                }
+                        .fillMaxWidth()
+                        .padding(horizontal = 24.dp, vertical = 10.dp),
+                )
+                Spacer(Modifier.height(8.dp))
+                Text(
+                    text = stringResource(R.string.maxfiy_raqamni_aniqlaymiz),
+                    color = Color.White,
+                    fontSize = 13.sp,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier
+                        .background(Color.Red)
+                        .padding(horizontal = 12.dp, vertical = 2.dp),
+                )
             }
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun SplashScreenPreview() {
+    SplashScreenContent()
 }

@@ -1,118 +1,125 @@
 package uz.shox.netnomer
 
-import android.app.Activity
 import android.content.ActivityNotFoundException
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import androidx.activity.compose.BackHandler
-import androidx.compose.animation.AnimatedContent
+import androidx.activity.compose.LocalActivity
 import androidx.compose.animation.ExperimentalSharedTransitionApi
 import androidx.compose.animation.SharedTransitionLayout
-import androidx.compose.animation.SizeTransform
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
-import androidx.compose.animation.togetherWith
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.platform.LocalContext
 import androidx.core.view.WindowCompat
+import androidx.navigation.NavHostController
+import androidx.navigation.NavType
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 
-private sealed interface AppScreen {
-    data object Home : AppScreen
-    data class Detail(
-        val config: CarrierPageConfig,
-        val showInterstitialOnEnter: Boolean = false,
-    ) : AppScreen
+object NavRoutes {
+    const val HOME = "home"
+    const val DETAIL_ARG = "carrierId"
+    const val DETAIL = "detail/{$DETAIL_ARG}"
+    const val WEB_ARG = "carrierId"
+    const val WEB = "web/{$WEB_ARG}"
 
-    data class Web(val config: CarrierPageConfig) : AppScreen
+    fun detail(carrierId: String) = "detail/$carrierId"
+    fun web(carrierId: String) = "web/$carrierId"
 }
 
 @OptIn(ExperimentalSharedTransitionApi::class)
 @Composable
-fun NetNomerApp(activity: Activity) {
-    var screen by remember { mutableStateOf<AppScreen>(AppScreen.Home) }
+fun NetNomerNavHost() {
+    val navController = rememberNavController()
+    val context = LocalContext.current
+    val activity = LocalActivity.current
+
     var showHelpDialog by rememberSaveable { mutableStateOf(true) }
     var isHomeDrawerOpen by rememberSaveable { mutableStateOf(false) }
     val isDarkTheme = isSystemInDarkTheme()
     val defaultStatusBarColor = if (isDarkTheme) Color.Black else Color.White
     val useDarkStatusIcons = !isDarkTheme
 
-    BackHandler(enabled = screen !is AppScreen.Home) {
-        screen = AppScreen.Home
+    val currentBackStackEntry by navController.currentBackStackEntryAsState()
+    val currentRoute = currentBackStackEntry?.destination?.route
+
+    SystemBarsEffect(
+        statusBarColor = when (currentRoute) {
+            NavRoutes.HOME -> if (isHomeDrawerOpen && !isDarkTheme) Color(0xFF60BF78) else defaultStatusBarColor
+            else -> defaultStatusBarColor
+        },
+        useDarkStatusIcons = useDarkStatusIcons,
+    )
+
+    val openUrl: (String) -> Unit = remember {
+        { url -> context.openUrl(url) }
+    }
+    val shareApp: () -> Unit = remember {
+        { context.shareApp() }
+    }
+    val exitApp: () -> Unit = remember(activity) {
+        { activity?.finish() }
     }
 
     SharedTransitionLayout {
-        AnimatedContent(
-            targetState = screen,
-            label = "app-screen",
-            transitionSpec = {
-                fadeIn(tween(180)).togetherWith(fadeOut(tween(180))).using(SizeTransform(clip = false))
-            },
-        ) { current ->
-            when (current) {
-                AppScreen.Home -> {
-                    SystemBarsEffect(
-                        activity = activity,
-                        statusBarColor = if (isHomeDrawerOpen && !isDarkTheme) {
-                            Color(0xFF60BF78)
-                        } else {
-                            defaultStatusBarColor
-                        },
-                        useDarkStatusIcons = useDarkStatusIcons,
-                    )
-                    HomeScreen(
-                        showHelpDialog = showHelpDialog,
-                        onCarrierClick = { screen = AppScreen.Detail(it) },
-                        onHelpDialogDismissed = { showHelpDialog = false },
-                        onDrawerOpenChange = { isHomeDrawerOpen = it },
-                        openUrl = activity::openUrl,
-                        shareApp = activity::shareApp,
-                        exitApp = activity::finish,
-                        sharedTransitionScope = this@SharedTransitionLayout,
-                        animatedVisibilityScope = this@AnimatedContent,
-                    )
-                }
-                is AppScreen.Detail -> {
-                    SystemBarsEffect(
-                        activity = activity,
-                        statusBarColor = defaultStatusBarColor,
-                        useDarkStatusIcons = useDarkStatusIcons,
-                    )
-                    CarrierDetailScreen(
-                        config = current.config,
-                        showInterstitialOnEnter = current.showInterstitialOnEnter,
-                        onOpenWebsite = { screen = AppScreen.Web(current.config) },
-                        onOpenUrl = activity::openUrl,
-                        onBack = { screen = AppScreen.Home },
-                        sharedTransitionScope = this@SharedTransitionLayout,
-                        animatedVisibilityScope = this@AnimatedContent,
-                    )
-                }
-                is AppScreen.Web -> {
-                    SystemBarsEffect(
-                        activity = activity,
-                        statusBarColor = defaultStatusBarColor,
-                        useDarkStatusIcons = useDarkStatusIcons,
-                    )
-                    CarrierWebScreen(
-                        title = current.config.title,
-                        url = current.config.websiteUrl,
-                        onClose = {
-                            screen = AppScreen.Detail(
-                                config = current.config,
-                                showInterstitialOnEnter = true,
-                            )
-                        },
-                    )
-                }
+        NavHost(
+            navController = navController,
+            startDestination = NavRoutes.HOME,
+        ) {
+            composable(NavRoutes.HOME) {
+                HomeScreen(
+                    showHelpDialog = showHelpDialog,
+                    onCarrierClick = { config ->
+                        navController.navigate(NavRoutes.detail(config.id.name))
+                    },
+                    onHelpDialogDismissed = { showHelpDialog = false },
+                    onDrawerOpenChange = { isHomeDrawerOpen = it },
+                    openUrl = openUrl,
+                    shareApp = shareApp,
+                    exitApp = exitApp,
+                    sharedTransitionScope = this@SharedTransitionLayout,
+                    animatedVisibilityScope = this,
+                )
+            }
+            composable(
+                route = NavRoutes.DETAIL,
+                arguments = listOf(navArgument(NavRoutes.DETAIL_ARG) { type = NavType.StringType }),
+            ) { backStackEntry ->
+                val carrierId = backStackEntry.arguments
+                    ?.getString(NavRoutes.DETAIL_ARG) ?: return@composable
+                val config = CarrierPageConfigs.require(CarrierId.valueOf(carrierId))
+                CarrierDetailScreen(
+                    config = config,
+                    onOpenWebsite = { navController.navigate(NavRoutes.web(carrierId)) },
+                    onOpenUrl = openUrl,
+                    onBack = { navController.popBackStack() },
+                    sharedTransitionScope = this@SharedTransitionLayout,
+                    animatedVisibilityScope = this,
+                )
+            }
+            composable(
+                route = NavRoutes.WEB,
+                arguments = listOf(navArgument(NavRoutes.WEB_ARG) { type = NavType.StringType }),
+            ) { backStackEntry ->
+                val carrierId = backStackEntry.arguments
+                    ?.getString(NavRoutes.WEB_ARG) ?: return@composable
+                val config = CarrierPageConfigs.require(CarrierId.valueOf(carrierId))
+                CarrierWebScreen(
+                    title = config.title,
+                    url = config.websiteUrl,
+                    onClose = { navController.popBackStack() },
+                )
             }
         }
     }
@@ -120,25 +127,32 @@ fun NetNomerApp(activity: Activity) {
 
 @Composable
 private fun SystemBarsEffect(
-    activity: Activity,
     statusBarColor: Color,
     useDarkStatusIcons: Boolean,
 ) {
+    val activity = LocalActivity.current
     DisposableEffect(activity, statusBarColor, useDarkStatusIcons) {
-        val previousStatusBarColor = activity.window.statusBarColor
-        val controller = WindowCompat.getInsetsController(activity.window, activity.window.decorView)
-        activity.window.statusBarColor = statusBarColor.toArgb()
-        controller.isAppearanceLightStatusBars = useDarkStatusIcons
-        onDispose {
-            activity.window.statusBarColor = previousStatusBarColor
+        if (activity != null) {
+            val previousStatusBarColor = activity.window.statusBarColor
+            val controller = WindowCompat.getInsetsController(
+                activity.window,
+                activity.window.decorView,
+            )
+            activity.window.statusBarColor = statusBarColor.toArgb()
+            controller.isAppearanceLightStatusBars = useDarkStatusIcons
+            onDispose {
+                activity.window.statusBarColor = previousStatusBarColor
+            }
+        } else {
+            onDispose { }
         }
     }
 }
 
-private fun Activity.openUrl(url: String) {
+private fun Context.openUrl(url: String) {
     try {
         startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
-    } catch (ignored: ActivityNotFoundException) {
+    } catch (_: ActivityNotFoundException) {
         if (url.startsWith(Constants.Links.MARKET_SCHEME)) {
             startActivity(
                 Intent(
@@ -147,15 +161,17 @@ private fun Activity.openUrl(url: String) {
                 ),
             )
         }
+    } catch (_: SecurityException) {
+        // Unable to handle the intent — no matching app
     }
 }
 
-private fun Activity.shareApp() {
+private fun Context.shareApp() {
     val sendIntent = Intent().apply {
         action = Intent.ACTION_SEND
         putExtra(
             Intent.EXTRA_TEXT,
-            "Maxfiy Raqamni Aniqlash \n${Constants.Links.APP_PLAY_STORE}",
+            getString(R.string.share_text) + "\n" + Constants.Links.APP_PLAY_STORE,
         )
         type = "text/plain"
     }

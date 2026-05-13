@@ -24,9 +24,6 @@ import androidx.compose.material.icons.rounded.Shop
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -43,7 +40,6 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun CarrierDetailScreen(
     config: CarrierPageConfig,
-    showInterstitialOnEnter: Boolean,
     onOpenWebsite: () -> Unit,
     onOpenUrl: (String) -> Unit,
     onBack: () -> Unit,
@@ -51,7 +47,6 @@ fun CarrierDetailScreen(
     animatedVisibilityScope: AnimatedVisibilityScope? = null,
 ) {
     val context = LocalContext.current
-    val showSignal by remember(config.id) { mutableIntStateOf(if (showInterstitialOnEnter) 1 else 0) }
     val isDarkTheme = isSystemInDarkTheme()
     val screenColor = if (isDarkTheme) MaterialTheme.colorScheme.background else config.primaryColor
     val headerColor = MaterialTheme.colorScheme.surface
@@ -71,10 +66,6 @@ fun CarrierDetailScreen(
     }
 
     BackHandler(onBack = onBack)
-    InterstitialAdEffect(
-        adUnitId = config.interstitialAdUnitId,
-        showSignal = showSignal,
-    )
 
     Box(
         modifier = Modifier
@@ -141,7 +132,7 @@ fun CarrierDetailScreen(
                             when (val action = config.appAction) {
                                 is CarrierAppAction.OpenUrl -> onOpenUrl(action.url)
                                 is CarrierAppAction.ShowToast -> {
-                                    Toast.makeText(context, action.message, Toast.LENGTH_LONG).show()
+                                    Toast.makeText(context, context.getString(action.messageResId), Toast.LENGTH_LONG).show()
                                 }
                             }
                         },
@@ -170,8 +161,6 @@ fun CarrierDetailScreen(
                         contentColor = cardTextColor,
                         onClick = { onOpenUrl(config.videoUrl) },
                     )
-                    Spacer(Modifier.height(40.dp))
-                    AdBanner(adUnitId = config.bannerAdUnitId)
                 }
             }
         }

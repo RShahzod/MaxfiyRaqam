@@ -195,10 +195,6 @@ fun HomeScreen(
                         }
                     }
                 }
-                item {
-                    Spacer(Modifier.height(32.dp))
-                    AdBanner(adUnitId = Constants.AdUnits.HOME_BANNER)
-                }
             }
         }
     }
@@ -216,12 +212,9 @@ fun HomeScreen(
     if (showAboutDialog) {
         AlertDialog(
             onDismissRequest = { showAboutDialog = false },
-            title = { Text("Ilova haqida") },
+            title = { Text(stringResource(R.string.about_title)) },
             text = {
-                Text(
-                    "Bu ilova orqali siz Maxfiy raqamdan kelgan qo'ng'iroqning " +
-                        "raqamini aniqlashingiz mumkin bo'ladi! \nDasturchi: Shahzod Ro'zimboyev",
-                )
+                Text(stringResource(R.string.about_description))
             },
             confirmButton = {
                 TextButton(onClick = { showAboutDialog = false }) {
@@ -234,16 +227,16 @@ fun HomeScreen(
     if (showExitDialog) {
         AlertDialog(
             onDismissRequest = { showExitDialog = false },
-            title = { Text("Ilovadan chiqish!") },
-            text = { Text("Siz haqiqatdan ham ilovadan chiqmoqchimisiz?") },
+            title = { Text(stringResource(R.string.exit_title)) },
+            text = { Text(stringResource(R.string.exit_message)) },
             confirmButton = {
                 TextButton(onClick = exitApp) {
-                    Text("Chiqish")
+                    Text(stringResource(R.string.chiqish))
                 }
             },
             dismissButton = {
                 TextButton(onClick = { showExitDialog = false }) {
-                    Text("Bekor qilish")
+                    Text(stringResource(R.string.cancel))
                 }
             },
         )

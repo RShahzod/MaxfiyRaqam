@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("uz.shox.netnomer", appContext.getPackageName());
+        assertEquals("uz.shox.maxfiy_raqam", appContext.getPackageName());
     }
 }

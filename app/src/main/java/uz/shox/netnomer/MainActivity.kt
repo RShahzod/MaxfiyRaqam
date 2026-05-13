@@ -7,11 +7,12 @@ import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.core.view.WindowCompat
-import com.google.android.gms.ads.MobileAds
 import hotchemi.android.rate.AppRate
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
         val isDarkTheme = resources.configuration.uiMode and
             Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
         enableEdgeToEdge(
@@ -26,10 +27,8 @@ class MainActivity : ComponentActivity() {
                 SystemBarStyle.light(android.graphics.Color.WHITE, android.graphics.Color.WHITE)
             },
         )
-        super.onCreate(savedInstanceState)
         WindowCompat.getInsetsController(window, window.decorView).isAppearanceLightStatusBars = !isDarkTheme
 
-        MobileAds.initialize(this) {}
         AppRate.with(this)
             .setInstallDays(3)
             .setLaunchTimes(3)
@@ -41,7 +40,7 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             NetNomerTheme {
-                NetNomerApp(activity = this)
+                NetNomerNavHost()
             }
         }
     }

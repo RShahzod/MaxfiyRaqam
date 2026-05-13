@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Maxfiy Raqamni Aniqlash</string>
+    <string name="app_name">Maxfiy raqamni aniqlash</string>
     <string name="sayt_orqali_aniqlash">SAYT ORQALI ANIQLASH</string>
     <string name="ilova_orqali_aniqlash">ILOVA ORQALI ANIQLASH</string>
     <string name="maxfiy_raqam_aniqlashni_o_rganish">MAXFIY RAQAMLARNI ANIQLASHNI O\'RGANISH</string>
@@ -30,4 +30,13 @@
     <string name="rate_dialog_ok">Baholash</string>
     <string name="rate_dialog_cancel">Keyinroq eslatish</string>
     <string name="rate_dialog_no">Yo\'q</string>
+
+    <string name="about_title">Ilova haqida</string>
+    <string name="about_description">Bu ilova orqali siz Maxfiy raqamdan kelgan qo\'ng\'iroqning raqamini aniqlashingiz mumkin bo\'ladi!\nDasturchi: Shahzod Ro\'zimboyev</string>
+    <string name="exit_title">Ilovadan chiqish!</string>
+    <string name="exit_message">Siz haqiqatdan ham ilovadan chiqmoqchimisiz?</string>
+    <string name="cancel">Bekor qilish</string>
+    <string name="ucell_no_app">Hozircha UCellda ilova orqali aniqlash mumkin emas!!!</string>
+    <string name="mobiuz_no_app">Hozircha MobiUzda ilova orqali aniqlash mumkin emas!!!</string>
+    <string name="share_text">Maxfiy raqamni aniqlash</string>
 </resources>

@@ -4,16 +4,12 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@drawable/logos"
         android:supportsRtl="true"
         android:theme="@style/Theme.NetNomer">
-
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-7532241080505290~5192107570" />
 
         <activity
             android:name=".SplashScreen"

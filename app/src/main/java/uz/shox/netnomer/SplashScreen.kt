@@ -17,7 +17,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
@@ -33,17 +32,19 @@ import kotlinx.coroutines.delay
 
 class SplashScreen : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         enableEdgeToEdge(
             statusBarStyle = SystemBarStyle.dark(AndroidColor.TRANSPARENT),
             navigationBarStyle = SystemBarStyle.dark(AndroidColor.TRANSPARENT),
         )
-        super.onCreate(savedInstanceState)
         setContent {
-            MaterialTheme {
+            NetNomerTheme {
                 LaunchedEffect(Unit) {
                     delay(3_000)
-                    startActivity(Intent(this@SplashScreen, MainActivity::class.java))
-                    finish()
+                    if (!isFinishing && !isDestroyed) {
+                        startActivity(Intent(this@SplashScreen, MainActivity::class.java))
+                        finish()
+                    }
                 }
                 Box(
                     modifier = Modifier

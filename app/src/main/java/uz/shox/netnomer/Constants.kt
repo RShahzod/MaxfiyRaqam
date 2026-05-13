@@ -3,8 +3,8 @@ package uz.shox.netnomer
 object Constants {
     object Links {
         const val MARKET_SCHEME = "market://"
-        const val APP_PLAY_STORE = "https://play.google.com/store/apps/details?id=uz.shox.netnomer"
-        const val APP_MARKET = "market://details?id=uz.shox.netnomer"
+        const val APP_PLAY_STORE = "https://play.google.com/store/apps/details?id=uz.shox.maxfiy_raqam"
+        const val APP_MARKET = "market://details?id=uz.shox.maxfiy_raqam"
         const val HELP_VIDEO = "https://youtube.com/@netnomer"
 
         const val YOUTUBE = "https://youtube.com/@netnomer"
@@ -28,21 +28,5 @@ object Constants {
 
         fun playStoreUrl(packageName: String): String =
             "https://play.google.com/store/apps/details?id=$packageName"
-    }
-
-    object AdUnits {
-        const val HOME_BANNER = "ca-app-pub-7532241080505290/8984885060"
-
-        const val UZMOBILE_BANNER = "ca-app-pub-7532241080505290/7208768968"
-        const val UZMOBILE_INTERSTITIAL = "ca-app-pub-7532241080505290/9951545741"
-
-        const val UCELL_BANNER = "ca-app-pub-7532241080505290/5975578342"
-        const val UCELL_INTERSTITIAL = "ca-app-pub-7532241080505290/8523500731"
-
-        const val BEELINE_BANNER = "ca-app-pub-7532241080505290/7097088327"
-        const val BEELINE_INTERSTITIAL = "ca-app-pub-7532241080505290/4775827416"
-
-        const val MOBIUZ_BANNER = "ca-app-pub-7532241080505290/8330278944"
-        const val MOBIUZ_INTERSTITIAL = "ca-app-pub-7532241080505290/6831430521"
     }
 }

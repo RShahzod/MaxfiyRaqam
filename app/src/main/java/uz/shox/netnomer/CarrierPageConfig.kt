@@ -1,6 +1,7 @@
 package uz.shox.netnomer
 
 import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.Color
 
 enum class CarrierId {
@@ -12,7 +13,7 @@ enum class CarrierId {
 
 sealed interface CarrierAppAction {
     data class OpenUrl(val url: String) : CarrierAppAction
-    data class ShowToast(val message: String) : CarrierAppAction
+    data class ShowToast(@StringRes val messageResId: Int) : CarrierAppAction
 }
 
 data class CarrierPageConfig(
@@ -27,8 +28,6 @@ data class CarrierPageConfig(
     val websiteUrl: String,
     val appAction: CarrierAppAction,
     val videoUrl: String,
-    val bannerAdUnitId: String,
-    val interstitialAdUnitId: String,
 )
 
 object CarrierPageConfigs {
@@ -45,8 +44,6 @@ object CarrierPageConfigs {
             websiteUrl = Constants.Links.UZMOBILE_WEBSITE,
             appAction = CarrierAppAction.OpenUrl(Constants.Links.UZMOBILE_APP),
             videoUrl = Constants.Links.UZMOBILE_VIDEO,
-            bannerAdUnitId = Constants.AdUnits.UZMOBILE_BANNER,
-            interstitialAdUnitId = Constants.AdUnits.UZMOBILE_INTERSTITIAL,
         ),
         CarrierPageConfig(
             id = CarrierId.Ucell,
@@ -58,10 +55,8 @@ object CarrierPageConfigs {
             homeLogoBackgroundColor = Color.Black,
             logoResId = R.drawable.ucel,
             websiteUrl = Constants.Links.UCELL_WEBSITE,
-            appAction = CarrierAppAction.ShowToast("Hozircha UCellda ilova orqali aniqlash mumkin emas!!!"),
+            appAction = CarrierAppAction.ShowToast(R.string.ucell_no_app),
             videoUrl = Constants.Links.UCELL_VIDEO,
-            bannerAdUnitId = Constants.AdUnits.UCELL_BANNER,
-            interstitialAdUnitId = Constants.AdUnits.UCELL_INTERSTITIAL,
         ),
         CarrierPageConfig(
             id = CarrierId.Beeline,
@@ -75,8 +70,6 @@ object CarrierPageConfigs {
             websiteUrl = Constants.Links.BEELINE_WEBSITE,
             appAction = CarrierAppAction.OpenUrl(Constants.Links.BEELINE_APP),
             videoUrl = Constants.Links.BEELINE_VIDEO,
-            bannerAdUnitId = Constants.AdUnits.BEELINE_BANNER,
-            interstitialAdUnitId = Constants.AdUnits.BEELINE_INTERSTITIAL,
         ),
         CarrierPageConfig(
             id = CarrierId.Mobiuz,
@@ -88,10 +81,8 @@ object CarrierPageConfigs {
             homeLogoBackgroundColor = Color.Black,
             logoResId = R.drawable.mobiuz,
             websiteUrl = Constants.Links.MOBIUZ_WEBSITE,
-            appAction = CarrierAppAction.ShowToast("Hozircha MobiUzda ilova orqali aniqlash mumkin emas!!!"),
+            appAction = CarrierAppAction.ShowToast(R.string.mobiuz_no_app),
             videoUrl = Constants.Links.MOBIUZ_VIDEO,
-            bannerAdUnitId = Constants.AdUnits.MOBIUZ_BANNER,
-            interstitialAdUnitId = Constants.AdUnits.MOBIUZ_INTERSTITIAL,
         ),
     )
 

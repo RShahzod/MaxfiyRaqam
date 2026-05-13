@@ -1,8 +1,10 @@
 package uz.shox.netnomer
 
+import android.webkit.SslErrorHandler
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import android.net.http.SslError
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -56,10 +58,19 @@ fun CarrierWebScreen(title: String, url: String, onClose: () -> Unit) {
                 .padding(innerPadding),
             factory = { context ->
                 WebView(context).apply {
-                    webViewClient = WebViewClient()
+                    webViewClient = object : WebViewClient() {
+                        override fun onReceivedSslError(
+                            view: WebView?,
+                            handler: SslErrorHandler?,
+                            error: SslError?,
+                        ) {
+                            handler?.cancel()
+                        }
+                    }
                     settings.javaScriptEnabled = true
                     settings.domStorageEnabled = true
                     settings.cacheMode = WebSettings.LOAD_DEFAULT
+                    settings.safeBrowsingEnabled = true
                     loadUrl(url)
                     webView = this
                 }
@@ -74,6 +85,8 @@ fun CarrierWebScreen(title: String, url: String, onClose: () -> Unit) {
 
     DisposableEffect(Unit) {
         onDispose {
+            webView?.clearCache(true)
+            webView?.clearHistory()
             webView?.destroy()
             webView = null
         }

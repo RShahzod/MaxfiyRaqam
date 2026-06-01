@@ -69,7 +69,7 @@ fun SplashScreenContent(onTimeout: () -> Unit = {}) {
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 Image(
-                    painter = painterResource(R.drawable.ic_app_splash_logo),
+                    painter = painterResource(R.drawable.ic_splash_logo),
                     contentDescription = stringResource(R.string.logo),
                     modifier = Modifier.size(150.dp),
                 )

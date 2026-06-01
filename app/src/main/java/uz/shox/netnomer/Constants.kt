@@ -17,13 +17,15 @@ object Constants {
         const val UZMOBILE_VIDEO = "https://youtube.com/@netnomer"
 
         const val UCELL_WEBSITE = "https://my.ucell.uz"
+        const val UCELL_APP = "https://play.google.com/store/apps/details?id=uz.ucell.ucellmobile"
         const val UCELL_VIDEO = "https://youtube.com/@netnomer"
 
-        const val BEELINE_WEBSITE = "https://beeline.uz/uz/signin"
+        const val BEELINE_WEBSITE = "https://my.beeline.uz/"
         const val BEELINE_APP = "https://play.google.com/store/apps/details?id=uz.beeline.odp"
         const val BEELINE_VIDEO = "https://youtube.com/@netnomer"
 
         const val MOBIUZ_WEBSITE = "https://ip.mobi.uz"
+        const val MOBIUZ_APP = "https://play.google.com/store/apps/details?id=uz.mobiuz.mobiservice"
         const val MOBIUZ_VIDEO = "https://youtube.com/@netnomer"
 
         fun playStoreUrl(packageName: String): String =

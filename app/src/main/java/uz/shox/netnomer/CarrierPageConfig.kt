@@ -55,7 +55,7 @@ object CarrierPageConfigs {
             homeLogoBackgroundColor = Color.Black,
             logoResId = R.drawable.ucel,
             websiteUrl = Constants.Links.UCELL_WEBSITE,
-            appAction = CarrierAppAction.ShowToast(R.string.ucell_no_app),
+            appAction = CarrierAppAction.OpenUrl(Constants.Links.UCELL_APP),
             videoUrl = Constants.Links.UCELL_VIDEO,
         ),
         CarrierPageConfig(
@@ -81,7 +81,7 @@ object CarrierPageConfigs {
             homeLogoBackgroundColor = Color.Black,
             logoResId = R.drawable.mobiuz,
             websiteUrl = Constants.Links.MOBIUZ_WEBSITE,
-            appAction = CarrierAppAction.ShowToast(R.string.mobiuz_no_app),
+            appAction = CarrierAppAction.OpenUrl(Constants.Links.MOBIUZ_APP),
             videoUrl = Constants.Links.MOBIUZ_VIDEO,
         ),
     )

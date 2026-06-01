@@ -15,7 +15,7 @@ class CarrierPageConfigTest {
 
         val ucell = CarrierPageConfigs.require(CarrierId.Ucell)
         assertEquals(Constants.Links.UCELL_WEBSITE, ucell.websiteUrl)
-        assertTrue(ucell.appAction is CarrierAppAction.ShowToast)
+        assertTrue(ucell.appAction is CarrierAppAction.OpenUrl)
 
         val beeline = CarrierPageConfigs.require(CarrierId.Beeline)
         assertEquals(Constants.Links.BEELINE_WEBSITE, beeline.websiteUrl)
@@ -23,6 +23,6 @@ class CarrierPageConfigTest {
 
         val mobiuz = CarrierPageConfigs.require(CarrierId.Mobiuz)
         assertEquals(Constants.Links.MOBIUZ_WEBSITE, mobiuz.websiteUrl)
-        assertTrue(mobiuz.appAction is CarrierAppAction.ShowToast)
+        assertTrue(mobiuz.appAction is CarrierAppAction.OpenUrl)
     }
 }

@@ -154,13 +154,6 @@ fun HomeScreen(
                     Spacer(Modifier.height(64.dp))
                 }
                 item {
-                    BannerAd(
-                        adUnitId = AdsConstants.BANNER_HOME,
-                        modifier = Modifier.fillMaxWidth(),
-                    )
-                    Spacer(Modifier.height(24.dp))
-                }
-                item {
                     BoxWithConstraints(modifier = Modifier.fillMaxWidth()) {
                         val logoSize = ((maxWidth - 16.dp) / 2).coerceAtMost(160.dp)
                         Column(
@@ -201,6 +194,13 @@ fun HomeScreen(
                             }
                         }
                     }
+                }
+                item {
+                    BannerAd(
+                        adUnitId = AdsConstants.BANNER_HOME,
+                        modifier = Modifier.fillMaxWidth(),
+                    )
+                    Spacer(Modifier.height(24.dp))
                 }
             }
         }

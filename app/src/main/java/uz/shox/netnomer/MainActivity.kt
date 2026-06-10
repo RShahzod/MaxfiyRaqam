@@ -2,6 +2,7 @@ package uz.shox.netnomer
 
 import android.os.Bundle
 import android.content.res.Configuration
+import android.webkit.WebView
 import androidx.activity.ComponentActivity
 import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
@@ -15,6 +16,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         MobileAds.initialize(this) {}
+        WebView(this)
 
         val isDarkTheme = resources.configuration.uiMode and
             Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES

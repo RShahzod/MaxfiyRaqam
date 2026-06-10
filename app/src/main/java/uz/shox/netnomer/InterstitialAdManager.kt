@@ -1,6 +1,7 @@
 package uz.shox.netnomer
 
 import android.app.Activity
+import android.util.Log
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.remember
@@ -31,6 +32,7 @@ class InterstitialAdManager(
                 }
 
                 override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                    Log.e("InterstitialAd", "Failed to load: code=${loadAdError.code}, msg=${loadAdError.message}, cause=${loadAdError.cause}")
                     interstitialAd = null
                 }
             },
@@ -54,6 +56,7 @@ class InterstitialAdManager(
                 }
 
                 override fun onAdFailedToShowFullScreenContent(adError: AdError) {
+                    Log.e("InterstitialAd", "Failed to show: code=${adError.code}, msg=${adError.message}, cause=${adError.cause}")
                     interstitialAd = null
                     load()
                     onAdDismissed()

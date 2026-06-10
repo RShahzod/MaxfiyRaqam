@@ -95,6 +95,13 @@ fun CarrierDetailScreen(
                 }
             }
             item {
+                BannerAd(
+                    adUnitId = AdsConstants.BANNER_DETAIL,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+                Spacer(Modifier.height(12.dp))
+            }
+            item {
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -162,13 +169,6 @@ fun CarrierDetailScreen(
                         onClick = { onOpenUrl(config.videoUrl) },
                     )
                 }
-            }
-            item {
-                BannerAd(
-                    adUnitId = AdsConstants.BANNER_DETAIL,
-                    modifier = Modifier.fillMaxWidth(),
-                )
-                Spacer(Modifier.height(12.dp))
             }
         }
     }

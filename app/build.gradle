@@ -13,8 +13,8 @@ android {
         applicationId "uz.shox.maxfiy_raqam"
         minSdk 24
         targetSdk 36
-        versionCode 3
-        versionName "1.0.1"
+        versionCode 4
+        versionName "1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -47,7 +47,7 @@ android {
 }
 
 dependencies {
-    def composeBom = platform('androidx.compose:compose-bom:2026.04.01')
+    def composeBom = platform('androidx.compose:compose-bom:2026.05.01')
 
     implementation composeBom
     androidTestImplementation composeBom
@@ -67,6 +67,5 @@ dependencies {
     debugImplementation 'androidx.compose.ui:ui-tooling'
     debugImplementation 'androidx.compose.ui:ui-test-manifest'
     implementation 'com.github.hotchemi:android-rate:1.0.1'
-    implementation 'com.google.android.gms:play-services-ads:23.6.0'
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.9.1'
+    implementation 'com.google.android.gms:play-services-ads:25.3.0'
 }

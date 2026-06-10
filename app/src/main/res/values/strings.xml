@@ -37,4 +37,5 @@
     <string name="exit_message">Siz haqiqatdan ham ilovadan chiqmoqchimisiz?</string>
     <string name="cancel">Bekor qilish</string>
     <string name="share_text">Maxfiy raqamni aniqlash</string>
+    <string name="admob_app_id">ca-app-pub-2941496225148104~3078021256</string>
 </resources>

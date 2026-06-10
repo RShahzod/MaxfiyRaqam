@@ -163,6 +163,13 @@ fun CarrierDetailScreen(
                     )
                 }
             }
+            item {
+                BannerAd(
+                    adUnitId = AdsConstants.BANNER_DETAIL,
+                    modifier = Modifier.fillMaxWidth(),
+                )
+                Spacer(Modifier.height(12.dp))
+            }
         }
     }
 }

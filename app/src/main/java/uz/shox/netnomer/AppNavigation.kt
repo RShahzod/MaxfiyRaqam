@@ -53,6 +53,7 @@ fun NetNomerNavHost() {
 
     val currentBackStackEntry by navController.currentBackStackEntryAsState()
     val currentRoute = currentBackStackEntry?.destination?.route
+    val interstitialAdManager = rememberInterstitialAdManager()
 
     SystemBarsEffect(
         statusBarColor = when (currentRoute) {
@@ -118,7 +119,11 @@ fun NetNomerNavHost() {
                 CarrierWebScreen(
                     title = config.title,
                     url = config.websiteUrl,
-                    onClose = { navController.popBackStack() },
+                    onClose = {
+                        interstitialAdManager.show {
+                            navController.popBackStack()
+                        }
+                    },
                 )
             }
         }
